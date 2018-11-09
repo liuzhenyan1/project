@@ -1,0 +1,46 @@
+ 
+<style>
+	#user{
+		width: 98%;
+		margin: 0 auto;
+		background-color: white;
+		padding: 10px;
+	}
+	.marginTop{
+		margin-top: 10px;
+		font-size: 14px;
+
+	}
+
+	.caption .row{
+		line-height: 40px;
+	}
+	.thumbnail{
+		box-shadow: 0 0 5px #cccccc;
+	}
+	.modal{
+		background-color: rgba(0,0,0,0.4);
+	}
+	/*设置位置*/
+	.modal-dialog{
+		width: 300px;
+		margin-top: 0;
+		margin-right: 0;
+	}
+	.backDiv{
+		float: left;
+		cursor: pointer;
+	}
+	.messageSpan{
+		color: red;
+	}
+	.alertDiv{
+		display: none;
+		position: absolute;
+		top:20px;
+		right: 20px;
+		width: 300px;
+	}
+</style>
+
+

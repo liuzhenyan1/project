@@ -1,0 +1,104 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.top{
+	height:300px;
+	width: 100%;
+    display: flex;
+}
+.top-left{
+	height: 300px;
+	width: 20%;
+	flex: 1
+	  
+}
+.top-left span {
+	font-size: 20px;
+	 margin-top: 30px;
+	  font-weight: bold;
+
+}
+  
+.top-left-1,.top-left-2,.top-left-3{
+	height: 84px;
+	width: 90%;
+	background-color: white;
+	margin: 12px 11px;
+
+}
+.top-left-1 img,.top-left-2 img,.top-left-3 img{
+	 margin-left: 10px;
+	 margin-top: 8px;
+}
+
+.top-content{
+	height: 276px;
+	width: 75%;
+	background-color: white;
+	flex: 2;
+	margin: 14px 0;
+
+}
+.top-right{
+	height: 300px;
+	width: 20%;
+	background:color: blue;
+	flex: 1
+}
+.top-right span{
+	font-size: 20px;
+	 margin-left: 20px;
+	 margin-top: 10px;
+	 font-weight: bold;
+	 
+}
+.top-right-1,.top-right-2{
+	height: 130px;
+	width: 90%;
+	background-color: white;
+	margin: 14px 12px;
+}
+.top-right-1 img,.top-right-2 img{
+	height: 100px;
+	width: 60%;
+	margin-left: 80px;
+	 }
+.buttom{
+height: 400px;
+width: 100%;
+/*background-color: grey;*/
+float: left;
+
+
+}
+.buttom-left{
+	height: 380px;
+	width:45%;
+	background-color:white;
+	float: left;
+	margin: 10px 25px;
+	 
+	 
+}
+.buttom-right{
+	height: 200px;
+	width:45%;
+	background-color:grey;
+	float: left;
+	margin: 10px 20px;
+
+}
+.buttom-right-1{
+	height:210px;
+	width: 100%;
+	background-color: white;
+	/*margin: 10px 0px;*/
+}
+.buttom-right-2{
+	margin-top: 8px;
+	height: 160px;
+	width: 100%;
+	background-color: white;
+
+}

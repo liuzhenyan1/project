@@ -1,0 +1,336 @@
+<div class="content">
+	<div class="top">
+		<div class="top-left">
+			<div class="top-left-1">
+				<img src="./images/clound.jpg" alt="">
+        <span>99.9%</span> 
+
+			</div>
+			<div class="top-left-2">
+				<img src="./images/user.jpg" alt="">
+        <span>117k</span>
+			</div>
+			<div class="top-left-3">
+				<img src="./images/camera.jpg" alt="">
+        <span>2,470</span>
+			</div>
+		</div>
+		<div class="top-content"></div>
+		<div class="top-right">
+			<div class="top-right-1">
+       <span>95.8%</span>
+				<img src="./images/zhu.png" alt="">
+       
+			</div>
+			<div class="top-right-2">
+       <span>320,45</span>
+				<img src="./images/circle.png" alt="">
+       
+			</div>
+		</div>
+	</div>
+	<div class="buttom">
+		<div class="buttom-left"></div>
+		<div class="buttom-right">
+			<div class="buttom-right-1"></div>
+			<div class="buttom-right-2"></div>
+		</div>
+
+
+	</div>
+</div>
+<script type="text/javascript">
+   $(document).ready(function() {
+   var title = {
+      text: '城市平均气温'   
+   },
+      subtitle = {
+      text: 'Source: runoob.com'
+   },
+      xAxis = {
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+   },
+      yAxis = {
+      title: {
+         text: 'Temperature (\xB0C)'
+      },
+      plotLines: [{
+         value: 0,
+         width: 1,
+         color: '#808080'
+      }]
+   },   
+
+      tooltip = {
+      valueSuffix: '\xB0C'
+   }
+
+      legend = {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+   },
+
+      series =  [
+      {
+         name: 'Tokyo',
+         data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
+            26.5, 23.3, 18.3, 13.9, 9.6]
+      }, 
+      {
+         name: 'New York',
+         data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
+            24.1, 20.1, 14.1, 8.6, 2.5]
+      },
+      {
+         name: 'London',
+         data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 
+            16.6, 14.2, 10.3, 6.6, 4.8]
+      }
+   ];
+
+   var json = {};
+
+   json.title = title;
+   json.subtitle = subtitle;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.tooltip = tooltip;
+   json.legend = legend;
+   json.series = series;
+
+   $('.top-content').highcharts(json);
+});
+	  
+	 $(document).ready(function() {  
+   var colors = Highcharts.getOptions().colors;
+   var categories = ['MSIE', 'Firefox', 'Chrome', 'Safari', 'Opera'];
+   var data = [{
+            y: 55.11,
+            color: colors[0],
+            drilldown: {
+                name: 'MSIE versions',
+                categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                data: [10.85, 7.35, 33.06, 2.81],
+                color: colors[0]
+            }
+        }, {
+            y: 21.63,
+            color: colors[1],
+            drilldown: {
+                name: 'Firefox versions',
+                categories: ['Firefox 2.0', 'Firefox 3.0', 'Firefox 3.5', 'Firefox 3.6', 'Firefox 4.0'],
+                data: [0.20, 0.83, 1.58, 13.12, 5.43],
+                color: colors[1]
+            }
+        }, {
+            y: 11.94,
+            color: colors[2],
+            drilldown: {
+                name: 'Chrome versions',
+                categories: ['Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', 'Chrome 8.0', 'Chrome 9.0',
+                    'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'],
+                data: [0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22],
+                color: colors[2]
+            }
+        }, {
+            y: 7.15,
+            color: colors[3],
+            drilldown: {
+                name: 'Safari versions',
+                categories: ['Safari 5.0', 'Safari 4.0', 'Safari Win 5.0', 'Safari 4.1', 'Safari/Maxthon',
+                    'Safari 3.1', 'Safari 4.1'],
+                data: [4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14],
+                color: colors[3]
+            }
+        }, {
+            y: 2.14,
+            color: colors[4],
+            drilldown: {
+                name: 'Opera versions',
+                categories: ['Opera 9.x', 'Opera 10.x', 'Opera 11.x'],
+                data: [ 0.12, 0.37, 1.65],
+                color: colors[4]
+            }
+        }];
+   var browserData = [];
+   var versionsData = [];
+   var i, j;
+   var dataLen = data.length;
+   var drillDataLen;
+   var brightness;
+
+
+   // Build the data arrays
+   for (i = 0; i < dataLen; i += 1) {
+      // add browser data
+      browserData.push({
+         name: categories[i],
+         y: data[i].y,
+         color: data[i].color
+      });
+
+      // add version data
+      drillDataLen = data[i].drilldown.data.length;
+      for (j = 0; j < drillDataLen; j += 1) {
+         brightness = 0.2 - (j / drillDataLen) / 5;
+         versionsData.push({
+            name: data[i].drilldown.categories[j],
+            y: data[i].drilldown.data[j],
+            color: Highcharts.Color(data[i].color).brighten(brightness).get()
+         });
+      }
+   }
+
+   var chart = {
+      type: 'pie'
+   };
+   var title = {
+      text: 'Browser market share, April, 2011'
+   };      
+   var yAxis = {
+      title: {
+         text: 'Total percent market share'
+      }
+   };
+   var tooltip = {
+      valueSuffix: '%'
+   };
+   var plotOptions = {
+      pie: {
+         shadow: false,
+         center: ['50%', '50%']
+      }
+   };
+   var series= [{
+      name: 'Browsers',
+            data: browserData,
+            size: '60%',
+            dataLabels: {
+                formatter: function () {
+                    return this.y > 5 ? this.point.name : null;
+                },
+                color: 'white',
+                distance: -30
+            }
+        }, {
+            name: 'Versions',
+            data: versionsData,
+            size: '80%',
+            innerSize: '60%',
+            dataLabels: {
+                formatter: function () {
+                    // display only if larger than 1
+                    return this.y > 1 ? '' + this.point.name + ': ' + this.y + '%'  : null;
+                }
+            }
+        }   
+   ];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.title = title;  
+   json.yAxis = yAxis;        
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $('.buttom-left').highcharts(json);  
+});
+	   
+	 $(document).ready(function() {  
+   var chart = {
+       plotBackgroundColor: null,
+       plotBorderWidth: 0,
+       plotShadow: false
+   };
+   var title = {
+      text: 'Browser<br>shares',
+      align: 'center',
+      verticalAlign: 'middle',
+      y: 50	  
+   };      
+   var tooltip = {
+      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+   };
+   var plotOptions = {
+      pie: {
+         dataLabels: {
+            enabled: true,
+            distance: -50,
+            style: {
+               fontWeight: 'bold',
+               color: 'white',
+               textShadow: '0px 1px 2px black'
+            }
+         },
+         startAngle: -90,
+         endAngle: 90,
+         center: ['50%', '75%']
+      }
+   };
+   var series= [{
+      type: 'pie',
+      name: 'Browser share',
+      innerSize: '50%',
+      data: [
+         ['Firefox',   45.0],
+         ['IE',       26.8],
+         ['Chrome', 12.8],
+         ['Safari',    8.5],
+         ['Opera',     6.2],
+         {
+            name: 'Others',
+            y: 0.7,
+            dataLabels: {
+               enabled: false
+            }
+         }
+      ]
+   }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $('.buttom-right-2').highcharts(json);  
+});
+    $(document).ready(function() {  
+   var chart = {
+      type: 'column'
+   };
+   var title = {
+      text: '使用负值的反向柱形图'   
+   };   
+   var xAxis = {
+      categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+   };
+   var credits = {
+      enabled: false
+   };
+   var series= [{
+      name: 'John',
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: 'Jane',
+            data: [2, -2, -3, 2, 1]
+        }, {
+            name: 'Joe',
+            data: [3, 4, 4, -2, 5]
+      }
+   ];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.title = title; 
+   json.xAxis = xAxis;
+   json.credits = credits;
+   json.series = series;
+   $('.buttom-right-1').highcharts(json);
+  
+});
+   
+</script>
